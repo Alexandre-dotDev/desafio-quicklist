@@ -1,0 +1,5 @@
+h1 {
+  font: var(--title);
+  color: var(--color-brand);
+  line-height: 2rem;
+}
