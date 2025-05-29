@@ -1,5 +1,210 @@
-h1 {
-  font: var(--title);
-  color: var(--color-brand);
-  line-height: 2rem;
+#container {
+  max-width: 23.4375rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-primary);
+  padding-inline: 2rem;
+
+  & .wrapper-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20.375rem;
+    min-height: inherit;
+
+    & .logo {
+      display: none;
+    }
+
+    & .link {
+      margin-top: 4.875rem;
+      width: 100%;
+
+      & a {
+        margin-left: 0;
+        text-decoration: none;
+        font: var(--link);
+        color: var(--color-brand);
+      }
+    }
+
+    & h1 {
+      width: 100%;
+      font: var(--title);
+      line-height: 2rem;
+      color: var(--content-primary);
+      margin-top: 1rem;
+      padding-bottom: 2.75rem;
+    }
+
+    & form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      & .input-product {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & .new-product {
+          font: var(--label);
+          line-height: 1.25rem;
+          color: var(--content-primary);
+          padding-block: 0.6875rem;
+          padding-left: 1rem;
+
+          border-radius: 0.75rem;
+          border: 2px solid var(--border-primary);
+          background-color: transparent;
+
+          &:hover {
+            border: 2px solid var(--border-hover);
+          }
+
+          &:focus {
+            border: 2px solid var(--color-brand);
+            outline: none;
+          }
+        }
+
+        & button {
+          font: var(--label);
+          color: var(--always-white);
+          line-height: 1.25rem;
+          padding-block: 0.6875rem;
+          margin-bottom: 2.5rem;
+
+          border-radius: 0.75rem;
+          border: none;
+          background-color: var(--color-brand);
+
+          &:hover {
+            background-color: var(--color-brand-hover);
+            cursor: pointer;
+          }
+        }
+      }
+      & .wrapper-items {
+        width: inherit;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        & .add-item {
+          width: inherit;
+          display: flex;
+          justify-content: space-between;
+
+          padding-block: 0.6875rem;
+
+          border-radius: 0.75rem;
+          background-color: var(--bg-secondary);
+
+          & .item {
+            font: var(--label);
+            line-height: 0.75rem;
+            padding-left: 0.75rem;
+
+            & .checkbox {
+              position: relative;
+              width: 1rem;
+              height: 1rem;
+              background-color: var(--bg-secondary);
+              border: 2px solid var(--border-primary);
+              border-radius: 6px;
+              appearance: none;
+              cursor: pointer;
+
+              &:hover {
+                border: 2px solid var(--border-hover);
+              }
+
+              &:checked {
+                background: url("../assets/check.svg") no-repeat center
+                  var(--color-brand);
+                border: none;
+              }
+            }
+          }
+
+          & img {
+            padding-right: 0.75rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    & .remove-item {
+      width: inherit;
+      display: none; /*Essa propriedade será habilitado via Js*/
+      justify-content: space-between;
+      align-items: center;
+      padding-block: 0.6875rem;
+      margin-top: 2.25rem;
+
+      color: var(--always-white);
+
+      border-radius: 0.75rem;
+      border: none;
+      background-color: var(--color-dange);
+
+      & .attention {
+        display: flex;
+        align-items: center;
+        padding-left: 0.75rem;
+
+        & img {
+          position: absolute;
+        }
+
+        & span {
+          font: var(--label);
+          line-height: 1.25rem;
+          margin-left: 1rem;
+        }
+      }
+
+      & img {
+        padding-right: 0.75rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (width >= 80em) {
+  #container {
+    max-width: inherit;
+
+    & .wrapper-list {
+      width: 39.1875rem;
+
+      & .logo {
+        display: flex;
+        margin-top: 1.5rem;
+      }
+      & .link {
+        margin-top: 7.9375rem;
+      }
+      & form {
+        & .input-product {
+          flex-direction: row;
+
+          & .new-product {
+            width: 28rem;
+            height: 2.75rem;
+          }
+
+          & button {
+            width: 10rem;
+            border: none;
+          }
+        }
+      }
+    }
+  }
 }
