@@ -7,10 +7,10 @@
   padding-inline: 2rem;
 
   & .wrapper-list {
+    width: var(--input-mobile);
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20.375rem;
     min-height: inherit;
 
     & .logo {
@@ -45,11 +45,13 @@
       flex-direction: column;
 
       & .input-product {
+        width: inherit;
         display: flex;
         flex-direction: column;
         gap: 1rem;
 
         & .new-product {
+          width: inherit;
           font: var(--label);
           line-height: 1.25rem;
           color: var(--content-primary);
@@ -71,6 +73,7 @@
         }
 
         & button {
+          width: inherit;
           font: var(--label);
           color: var(--always-white);
           line-height: 1.25rem;
@@ -134,10 +137,11 @@
             & .text {
               font: var(--label);
               margin-left: 1rem;
+              cursor: pointer;
             }
           }
 
-          & img {
+          & .trash {
             padding-right: 0.75rem;
             cursor: pointer;
           }
@@ -146,8 +150,8 @@
     }
 
     & .remove-item {
-      width: inherit;
-      display: none; /*Essa propriedade será habilitado via Js*/
+      width: 19.4375rem;
+      display: flex;
       justify-content: space-between;
       align-items: center;
       padding-block: 0.6875rem;
@@ -168,14 +172,14 @@
           position: absolute;
         }
 
-        & span {
+        & .alert {
           font: var(--label);
           line-height: 1.25rem;
-          margin-left: 1rem;
+          margin-left: 1.75rem;
         }
       }
 
-      & img {
+      & .close {
         padding-right: 0.75rem;
         cursor: pointer;
       }
@@ -188,7 +192,7 @@
     max-width: inherit;
 
     & .wrapper-list {
-      width: 39.1875rem;
+      width: var(--input-desktop);
 
       & .logo {
         display: flex;
@@ -211,6 +215,10 @@
             border: none;
           }
         }
+      }
+
+      & .remove-item {
+        width: var(--input-desktop);
       }
     }
   }

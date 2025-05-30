@@ -1,17 +1,20 @@
 import { baseAPI } from "../api/api";
 
-const wrapperItem = document.querySelector(".wrapper-items");
+const wrapperItems = document.querySelector(".wrapper-items");
 const pathImg = "./assets/bin.svg";
 export async function getItems() {
   try {
-    wrapperItem.innerHTML = "";
+    wrapperItems.innerHTML = "";
     const response = await fetch(`${baseAPI}/list`);
+    if (!response.ok) {
+      throw new Error("Não foi conectar ao servidor.");
+    }
     const data = await response.json();
 
     data.forEach(({ id, item }) => {
       const addItem = document.createElement("div");
       addItem.classList.add("add-item");
-
+      addItem.setAttribute("data-id", `${id}`);
       const itemDiv = document.createElement("div");
       itemDiv.classList.add("item");
 
@@ -27,11 +30,12 @@ export async function getItems() {
 
       const img = document.createElement("img");
       img.setAttribute("src", pathImg);
+      img.classList.add("trash");
       img.setAttribute("alt", "Ícone de lixeira");
 
       itemDiv.append(input, label);
       addItem.append(itemDiv, img);
-      wrapperItem.append(addItem);
+      wrapperItems.append(addItem);
     });
   } catch (error) {
     alert("Não possivel carregar a lista de itens.");

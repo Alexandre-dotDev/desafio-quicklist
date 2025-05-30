@@ -28,4 +28,13 @@
   --label: 500 1rem var(--ff);
   --paragraph: 400 1rem 20px var(--ff);
   --link: 0.875rem 16px var(--ff);
+
+  /* SIZE */
+  --input-mobile: 20.375rem;
+  --input-desktop: 39.1875rem;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }

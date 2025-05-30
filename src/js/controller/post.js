@@ -9,8 +9,12 @@ form.addEventListener("submit", async (event) => {
 
   const item = input.value.trim();
   const id = new Date().getTime().toString();
-
   try {
+    if (item === "") {
+      alert("É necessário passar um item.");
+      input.focus();
+      return;
+    }
     const response = await fetch(`${baseAPI}/list`, {
       method: "POST",
       headers: {
