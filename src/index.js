@@ -2,4 +2,5 @@
 import "./style/style.css";
 
 //JS
-import "./js/post.js";
+import "./js/page-loade.js";
+import "./js/controller/post.js";

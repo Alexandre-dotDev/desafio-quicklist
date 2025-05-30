@@ -105,6 +105,8 @@
           background-color: var(--bg-secondary);
 
           & .item {
+            display: flex;
+            align-items: center;
             font: var(--label);
             line-height: 0.75rem;
             padding-left: 0.75rem;
@@ -128,6 +130,10 @@
                   var(--color-brand);
                 border: none;
               }
+            }
+            & .text {
+              font: var(--label);
+              margin-left: 1rem;
             }
           }
 
